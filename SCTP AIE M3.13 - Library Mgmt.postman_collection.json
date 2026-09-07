@@ -1,0 +1,596 @@
+{
+  "info": {
+    "_postman_id": "66e183a8-8c10-485c-8646-ecc302063382",
+    "name": "SCTP AIE M3.13 - Library Mgmt",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "13967603"
+  },
+  "item": [
+    {
+      "name": "Get all books",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/books",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "books"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 07 Sep 2026 14:02:03 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"638c4b66-b2e8-45f7-a69e-6c47de658273\",\n        \"title\": \"Clean Code\",\n        \"author\": \"Robert C. Martin\",\n        \"isbn\": \"978-0132350884\",\n        \"publicationYear\": 2008\n    },\n    {\n        \"id\": \"29ae0070-ed9d-40eb-baf2-9ac4e28cffb7\",\n        \"title\": \"Effective Java\",\n        \"author\": \"Joshua Bloch\",\n        \"isbn\": \"978-0134685991\",\n        \"publicationYear\": 2018\n    },\n    {\n        \"id\": \"168fefd7-25e0-4d3f-a6f8-318f4c8b28d2\",\n        \"title\": \"Design Patterns\",\n        \"author\": \"Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\",\n        \"isbn\": \"978-0201633610\",\n        \"publicationYear\": 1994\n    },\n    {\n        \"id\": \"3c5edda7-d210-4531-af5f-bced9772e452\",\n        \"title\": \"Head First Java\",\n        \"author\": \"Kathy Sierra and Bert Bates\",\n        \"isbn\": \"978-0596009205\",\n        \"publicationYear\": 2005\n    },\n    {\n        \"id\": \"f8eac992-4ea4-4d42-9c5b-3f61d8a10dd8\",\n        \"title\": \"Refactoring\",\n        \"author\": \"Martin Fowler\",\n        \"isbn\": \"978-0134757599\",\n        \"publicationYear\": 2018\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get book by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/books/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "7f833693-7078-482f-ada2-66b8a070f6fb"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/books/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "books",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "7f833693-7078-482f-ada2-66b8a070f6fb"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 07 Sep 2026 14:09:25 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"7f833693-7078-482f-ada2-66b8a070f6fb\",\n    \"title\": \"Clean Code\",\n    \"author\": \"Robert C. Martin\",\n    \"isbn\": \"978-0132350884\",\n    \"publicationYear\": 2008\n}"
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/books/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "books",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "7f833693-7078-482f-ada"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain;charset=UTF-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "46"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 07 Sep 2026 14:09:44 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "Book not found with id: 7f833693-7078-482f-ada"
+        }
+      ]
+    },
+    {
+      "name": "Create book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Refactoring\",\r\n    \"author\": \"Martin Fowler\",\r\n    \"isbn\": \"978-0134757599\",\r\n    \"publicationYear\": 2018\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "201 - Created",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Refactoring\",\r\n    \"author\": \"Martin Fowler\",\r\n    \"isbn\": \"978-0134757599\",\r\n    \"publicationYear\": 2018\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/books",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "books"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 07 Sep 2026 14:13:43 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"07a90902-a33f-4023-b3e7-5099fc2066d0\",\n    \"title\": \"Refactoring\",\n    \"author\": \"Martin Fowler\",\n    \"isbn\": \"978-0134757599\",\n    \"publicationYear\": 2018\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update book",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Refactoring\",\r\n    \"author\": \"Martin Fowler\",\r\n    \"isbn\": \"978-0134757599\",\r\n    \"publicationYear\": 2018\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/books/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2c5ebd4c-47bd-452e-aa14-a75986bd1903"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Refactoring\",\r\n    \"author\": \"Martin Fowler\",\r\n    \"isbn\": \"978-0134757599\",\r\n    \"publicationYear\": 2018\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/books/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "books",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "36cfa235-1eee-42ab-8ac3-1a2fa7e2eaf3"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 07 Sep 2026 14:24:15 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"3f7adf5d-ab5e-4d72-a3a9-0522a138190c\",\n    \"title\": \"Refactoring\",\n    \"author\": \"Martin Fowler\",\n    \"isbn\": \"978-0134757599\",\n    \"publicationYear\": 2018\n}"
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Refactoring\",\r\n    \"author\": \"Martin Fowler\",\r\n    \"isbn\": \"978-0134757599\",\r\n    \"publicationYear\": 2018\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/books/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "books",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "36cfa235-1eee-42ab-8ac3-1a2fa7e2eaf0"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain;charset=UTF-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "60"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 07 Sep 2026 14:24:42 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "Book not found with id: 36cfa235-1eee-42ab-8ac3-1a2fa7e2eaf0"
+        }
+      ]
+    },
+    {
+      "name": "Delete book by id",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/books/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "d6f3295b-7a0e-488c-b8f2-6d1ba0317ae5"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "204 - No Content",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/books/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "books",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "83a63c7d-3199-4292-b3c0-68f07409c326"
+                }
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 07 Sep 2026 14:35:04 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/books/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "books",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "e6c14f27-5ff3-41d1-b9e6-bbfc8f54f5de"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain;charset=UTF-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "60"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 07 Sep 2026 14:34:34 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "Book not found with id: e6c14f27-5ff3-41d1-b9e6-bbfc8f54f5de"
+        }
+      ]
+    },
+    {
+      "name": "Get book statistics",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/books/statistics",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books",
+            "statistics"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
